@@ -1,0 +1,26 @@
+version: '2'
+
+services:
+  mongodb:
+    restart: always
+    image: 'mongo:3.6'
+    ports:
+      - '27017:27017'
+    volumes:
+      - 'routific_mongo:/data/db'
+    env_file:
+      - '.env'
+
+  website:
+    depends_on:
+      - 'mongodb'
+    build: .
+    ports:
+      - '3000:3000'
+    volumes:
+      - '.:/home/node/routific'
+    env_file:
+      - '.env'
+      
+volumes:
+  routific_mongo:
