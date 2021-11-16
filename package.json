@@ -29,7 +29,7 @@
     "redis": "^2.7.1",
     "bee-queue": "^1.2.3",
     "express-fileupload": "^1.1.6",
-    "aws-sdk": "^2.656.0"
+    "aws-sdk": "^2.814.0"
   },
   "devDependencies": {
     "concurrently": "^3.6.1"
